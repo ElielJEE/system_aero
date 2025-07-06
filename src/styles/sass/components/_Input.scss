@@ -1,0 +1,14 @@
+.input-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+	color: $primary-color;
+	font-weight: 500;
+
+	&__input {
+		border: solid 1px $primary-color-transparent;
+		height: 2.5rem;
+		border-radius: 10px;
+	}
+}

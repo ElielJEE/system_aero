@@ -12,8 +12,8 @@ export default function InputValidation({ id, label, type = 'text', value, onCha
   }
 
   return (
-    <div className="flex flex-col mb-4">
-      <label htmlFor={id} className="mb-1 font-semibold">
+    <div className="input-container">
+      <label htmlFor={id} className="input-container__label">
         {label}
       </label>
       <input
@@ -25,8 +25,8 @@ export default function InputValidation({ id, label, type = 'text', value, onCha
           onChange(e);
         }}
         onBlur={handleBlur}
-        className={`border rounded px-3 py-2 focus:outline-none ${
-          error ? 'border-red-500' : 'focus:ring-2 focus:ring-blue-500'
+        className={`input-container__input ${
+          error ? 'input-error' : 'focus:ring-2 focus:ring-blue-500'
         }`}
       />
       {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
