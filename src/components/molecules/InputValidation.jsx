@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 
-export default function InputValidation({ id, label, type = 'text', value, onChange, validate }) {
+export default function InputValidation({ id, label, type = 'text', value, onChange, validate, icon, placeholder }) {
   const [error, setError] = useState(null);
 
   function handleBlur() {
@@ -12,24 +12,26 @@ export default function InputValidation({ id, label, type = 'text', value, onCha
   }
 
   return (
-    <div className="input-container">
+    <div className="form-group">
       <label htmlFor={id} className="input-container__label">
         {label}
       </label>
-      <input
-        id={id}
-        type={type}
-        value={value}
-        onChange={(e) => {
-          setError(null);
-          onChange(e);
-        }}
-        onBlur={handleBlur}
-        className={`input-container__input ${
-          error ? 'input-error' : 'focus:ring-2 focus:ring-blue-500'
-        }`}
-      />
-      {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
+      <div className="form-group__input-container">
+        <input
+          id={id}
+          type={type}
+          value={value}
+          placeholder={placeholder}
+          onChange={(e) => {
+            setError(null);
+            onChange(e);
+          }}
+          onBlur={handleBlur}
+          className={`input ${error ? 'input-error' : 'input'}`}
+        />
+        {icon}
+      </div>
+      {error && <p className="error-text">{error}</p>}
     </div>
   );
 }

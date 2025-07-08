@@ -1,9 +1,12 @@
 "use client";
 import { LoginButton } from "@/components/atoms";
 import { EmailInput, PasswordInput } from "@/components/molecules";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Login() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
 	return (
 		<div className="login-container">
 			<div className="login-container__login-content">
@@ -15,8 +18,14 @@ export default function Login() {
 					<p className="login-slogan">#1 EN IDIOMAS</p>
 				</div>
 				<form action="" className="login-form">
-					<EmailInput />
-					<PasswordInput />
+					<EmailInput
+						value={email}
+						onChange={e => setEmail(e.target.value)}
+					/>
+					<PasswordInput
+						value={password}
+						onChange={e => setPassword(e.target.value)}
+					/>
 					<div className="login-form__forgot-password-container">
 						<span className="forgot-password-text">
 							¿Olvidaste tu contraseña?
