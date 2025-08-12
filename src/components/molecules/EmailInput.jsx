@@ -1,4 +1,6 @@
+import { TfiEmail } from "react-icons/tfi";
 import InputValidation from './InputValidation';
+
 
 function validateEmail(value) {
   if (!value) return 'El email es obligatorio';
@@ -15,6 +17,8 @@ export default function EmailInput({ value, onChange }) {
       value={value}
       onChange={onChange}
       validate={validateEmail}
+      icon={<TfiEmail className="input-icon"/>}
+      placeholder={'ejemplo@ejemplo.com'}
     />
   );
 }

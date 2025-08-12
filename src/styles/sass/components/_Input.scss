@@ -1,0 +1,57 @@
+.form-group {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+	color: $primary-color;
+	font-weight: 500;
+
+	&__input-container {
+		width: 100%;
+		position: relative;
+
+		.input {
+			border: solid 1px $primary-color-transparent;
+			height: 2.5rem;
+			border-radius: 5px;
+			padding-left: 35px;
+			width: 100%;
+			outline: none;
+			color: $primary-color;
+			font-size: 1rem;
+		}
+
+		.input-icon {
+			position: absolute;
+			font-size: 1.1rem;
+			bottom: 11px;
+			left: 10px;
+		}
+
+		.password-show {
+			position: absolute;
+			display: flex;
+			cursor: pointer;
+			font-size: 1.3rem;
+			background-color: transparent;
+			border: none;
+			color: $primary-color;
+			right: 15px;
+			bottom: 10px;
+		}
+	}
+
+
+	.input-error {
+		border: solid 1px red;
+	}
+
+	.input-error~.input-icon,
+	.input-error~.password-show {
+		color: red;
+	}
+
+	.error-text {
+		color: red;
+	}
+}
