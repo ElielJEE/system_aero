@@ -25,6 +25,7 @@ export default function PasswordInput({ value, onChange }) {
       value={value}
       onChange={onChange}
       validate={validatePassword}
+      placeholder={"••••••••••"}
       icon={
         <>
           <FaLock className='input-icon'/>

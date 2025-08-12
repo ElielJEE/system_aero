@@ -25,7 +25,16 @@
 
 			&__logo {
 				width: 100%;
+				animation: logoAnim 1.5s alternate-reverse infinite ease-in-out;
 			}
+		}
+	}
+
+	@keyframes logoAnim {
+		from {
+			transform: scale(1.1);
+		} to {
+			transform: scale(1);
 		}
 	}
 
